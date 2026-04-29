@@ -6,11 +6,9 @@ const { updated, published } = Astro.props as {
 
 const displayDate = updated || published;
 const formattedDate = displayDate
-  ? new Intl.DateTimeFormat("ja-JP", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }).format(new Date(`${displayDate}T00:00:00+09:00`))
+  ? displayDate.replace(/^(\d{4})-(\d{2})-(\d{2})$/, (_, year, month, day) => {
+      return `${Number(year)}年${Number(month)}月${Number(day)}日`;
+    })
   : "";
 ---
 
