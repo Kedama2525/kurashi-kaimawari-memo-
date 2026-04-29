@@ -1,0 +1,43 @@
+---
+const sets = [
+  {
+    label: "5店舗セット",
+    description: "紙類、洗剤、食品を無理なく組み合わせる基本セット。",
+    href: "/rakuten-marathon/five-store-set/",
+    tone: "green",
+  },
+  {
+    label: "7店舗セット",
+    description: "重いもの・かさばるものを足して、買い回りを広げるセット。",
+    href: "/rakuten-marathon/seven-store-set/",
+    tone: "orange",
+  },
+  {
+    label: "10店舗セット",
+    description: "日用品、食品、楽天経済圏まで含めて整理する上級セット。",
+    href: "/rakuten-marathon/ten-shop-set/",
+    tone: "red",
+  },
+];
+---
+
+<section class="home-panel home-panel--sets">
+  <div class="home-panel__header">
+    <p>Shopping set</p>
+    <h2>買い回りセット</h2>
+  </div>
+  <div class="shopping-set-list">
+    {sets.map((set) => (
+      <article class={`shopping-set-card shopping-set-card--${set.tone}`}>
+        <div class="shopping-set-card__icon" aria-hidden="true">
+          <span></span>
+        </div>
+        <div>
+          <h3>{set.label}</h3>
+          <p>{set.description}</p>
+          <a href={set.href}>詳しく見る</a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,22 @@
+---
+const { updated, published } = Astro.props as {
+  updated?: string;
+  published?: string;
+};
+
+const displayDate = updated || published;
+const formattedDate = displayDate
+  ? new Intl.DateTimeFormat("ja-JP", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }).format(new Date(`${displayDate}T00:00:00+09:00`))
+  : "";
+---
+
+<div class="affiliate-notice">
+  <span class="affiliate-notice__label">PR</span>
+  {displayDate && (
+    <time class="affiliate-notice__date" datetime={displayDate}>更新日: {formattedDate}</time>
+  )}
+</div>

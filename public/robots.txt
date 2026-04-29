@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kurashi-kaimawari-memo.pages.dev/sitemap-index.xml

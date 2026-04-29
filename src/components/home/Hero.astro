@@ -1,0 +1,30 @@
+---
+const badges = ["比較しやすい", "選びやすい", "買い回りに強い"];
+---
+
+<section class="home-hero">
+  <div class="kkm-container">
+    <div class="home-hero__stage">
+      <img class="home-hero__image" src="/images/common/hero-kurashi.webp" alt="生活用品が並んだ棚のイメージ" loading="eager" />
+      <div class="home-hero__overlay" aria-hidden="true"></div>
+      <div class="home-hero__content">
+      <p class="home-hero__eyebrow">Rakuten shopping guide for daily life</p>
+      <h1 class="home-hero__title">
+        <span>暮らしの</span>
+        <span>買い回りメモ</span>
+      </h1>
+      <p class="home-hero__lead">
+        楽天で日用品・食品・キッチン用品を<br class="pc-only" />
+        お得に買うためのガイドメディア
+      </p>
+      <div class="home-hero__badges" aria-label="サイトの特徴">
+        {badges.map((badge) => <span>{badge}</span>)}
+      </div>
+      </div>
+      <div class="home-hero__note">
+        <span>買う前にチェック</span>
+        <strong>日用品・食品・買い回り</strong>
+      </div>
+    </div>
+  </div>
+</section>

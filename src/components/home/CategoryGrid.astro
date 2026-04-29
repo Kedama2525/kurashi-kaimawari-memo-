@@ -1,0 +1,60 @@
+---
+const categories = [
+  {
+    name: "日用品",
+    href: "/category/daily-goods/",
+    image: "/images/categories/daily-goods.webp",
+    description: "紙類・洗剤・ストック品",
+  },
+  {
+    name: "食品・飲料",
+    href: "/category/food-drink/",
+    image: "/images/categories/food-drink.webp",
+    description: "水・炭酸水・常備食",
+  },
+  {
+    name: "キッチン用品",
+    href: "/category/kitchen/",
+    image: "/images/categories/kitchen.webp",
+    description: "ラップ・保存容器・袋類",
+  },
+  {
+    name: "ペット用品",
+    href: "/category/pet/",
+    image: "/images/categories/pet.webp",
+    description: "シーツ・フード・消臭袋",
+  },
+  {
+    name: "楽天買い回り攻略",
+    href: "/category/rakuten-marathon/",
+    image: "/images/categories/rakuten-marathon.webp",
+    description: "1,000円台・店舗セット",
+  },
+  {
+    name: "楽天経済圏",
+    href: "/category/rakuten-economy/",
+    image: "/images/categories/rakuten-economy.webp",
+    description: "楽天カード・ポイント施策",
+  },
+];
+---
+
+<section class="home-section home-section--categories">
+  <div class="kkm-container">
+    <div class="home-section__header">
+      <p class="home-section__label">Category</p>
+      <h2>目的から探す</h2>
+    </div>
+    <div class="home-category-grid">
+      {categories.map((category) => (
+        <a class="home-category-card" href={category.href}>
+          <img src={category.image} alt="" loading="lazy" />
+          <span class="home-category-card__body">
+            <strong>{category.name}</strong>
+            <small>{category.description}</small>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

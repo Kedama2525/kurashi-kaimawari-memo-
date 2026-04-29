@@ -1,0 +1,18 @@
+---
+import { SITE } from "@/data/site";
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div>
+      <strong>{SITE.name}</strong>
+      <p class="muted">楽天で生活用品を買う前に見る、買い回りガイド型メディア。</p>
+    </div>
+    <nav class="footer-links" aria-label="フッターナビゲーション">
+      <a href="/about/">運営者情報</a>
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/contact/">お問い合わせ</a>
+      <a href={SITE.hatenaUrl}>はてなブログ</a>
+    </nav>
+  </div>
+</footer>

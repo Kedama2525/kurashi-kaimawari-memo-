@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import AffiliateNotice from "@/components/AffiliateNotice.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+
+const { article, category, relatedArticles = [], tocItems = [] } = Astro.props as {
+  article: any;
+  category: { name: string; slug: string };
+  relatedArticles?: any[];
+  tocItems?: { depth: number; slug: string; text: string }[];
+};
+
+const articlePoints = article.data.points as string[];
+---
+
+<BaseLayout title={article.data.title} description={article.data.description}>
+  <article class="article-layout">
+    {article.data.affiliate && <AffiliateNotice published={article.data.date} updated={article.data.updated} />}
+    <Breadcrumb
+      items={[
+        { label: category.name, href: `/category/${category.slug}/` },
+        { label: article.data.title },
+      ]}
+    />
+    <header class="article-header">
+      <h1>{article.data.title}</h1>
+      <p>{article.data.description}</p>
+    </header>
+    {article.data.points?.length > 0 && (
+      <section class="points" aria-labelledby="points-heading">
+        <h2 id="points-heading">この記事でわかること</h2>
+        <ul>
+          {articlePoints.map((point) => <li>{point}</li>)}
+        </ul>
+      </section>
+    )}
+    {tocItems.length > 0 && (
+      <nav class="article-toc" aria-labelledby="article-toc-heading">
+        <h2 id="article-toc-heading">目次</h2>
+        <ol>
+          {tocItems.map((item) => (
+            <li>
+              <a href={`#${item.slug}`}>{item.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
+    <div class="article-body">
+      <slot />
+    </div>
+    {relatedArticles.length > 0 && (
+      <section class="section--tight">
+        <h2 class="section-title">関連記事</h2>
+        <div class="related-list">
+          {relatedArticles.map((item) => (
+            <a class="article-card" href={`/${item.data.category}/${item.data.slug}/`}>
+              <h3>{item.data.title}</h3>
+              <p>{item.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>

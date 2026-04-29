@@ -1,0 +1,9 @@
+---
+import ProductCard from "@/components/ProductCard.astro";
+
+const { products } = Astro.props as { products: any[] };
+---
+
+<div>
+  {products.map((product) => <ProductCard product={product} />)}
+</div>

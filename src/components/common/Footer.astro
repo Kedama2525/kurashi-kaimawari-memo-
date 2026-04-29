@@ -1,0 +1,18 @@
+---
+import { SITE } from "@/data/site";
+---
+
+<footer class="kkm-footer">
+  <div class="kkm-container kkm-footer__inner">
+    <div class="kkm-footer__brand">
+      <p class="kkm-footer__name">{SITE.name}</p>
+      <p>楽天で生活用品を買う前に見る、買い回りガイド型メディア。</p>
+    </div>
+    <nav class="kkm-footer__links" aria-label="フッターナビゲーション">
+      <a href="/about/">運営者情報</a>
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/contact/">お問い合わせ</a>
+      <a href={SITE.hatenaUrl}>はてなブログ</a>
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,76 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ArticleCard from "@/components/ArticleCard.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import { CATEGORIES } from "@/data/categories";
+import { getCollection } from "astro:content";
+
+export function getStaticPaths() {
+  return CATEGORIES.map((category) => ({
+    params: { slug: category.slug },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+const articles = await getCollection("articles", ({ data }) => data.category === category.slug && !data.draft);
+const typeLabel = {
+  "product-roundup": "商品まとめ",
+  "marathon-guide": "買い回り攻略",
+  "economy-guide": "楽天経済圏",
+};
+---
+
+<BaseLayout title={category.name} description={category.description}>
+  <section class="article-layout">
+    <Breadcrumb items={[{ label: category.name }]} />
+    <header class="article-header">
+      <h1>{category.name}</h1>
+      <p>{category.lead}</p>
+    </header>
+
+    <nav class="article-toc article-toc--compact" aria-labelledby="category-toc-heading">
+      <h2 id="category-toc-heading">目次</h2>
+      <ol>
+        <li><a href="#purpose">目的別</a></li>
+        <li><a href="#featured-articles">代表記事</a></li>
+        <li><a href="#article-list">記事一覧</a></li>
+      </ol>
+    </nav>
+
+    <section id="purpose" class="points">
+      <h2>目的別</h2>
+      <ul>
+        {category.goals.map((goal) => <li>{goal}</li>)}
+      </ul>
+    </section>
+
+    <section id="featured-articles" class="section--tight">
+      <h2 class="section-title">代表記事</h2>
+      <div class="article-grid">
+        {articles.slice(0, 3).map((article) => (
+          <ArticleCard
+            href={`/${article.data.category}/${article.data.slug}/`}
+            title={article.data.title}
+            description={article.data.description}
+            badge={typeLabel[article.data.type]}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section id="article-list" class="section--tight">
+      <h2 class="section-title">記事一覧</h2>
+      <div class="related-list">
+        {articles.map((article) => (
+          <ArticleCard
+            href={`/${article.data.category}/${article.data.slug}/`}
+            title={article.data.title}
+            description={article.data.description}
+            badge={typeLabel[article.data.type]}
+          />
+        ))}
+      </div>
+    </section>
+  </section>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+const { href, title, description, badge } = Astro.props as {
+  href: string;
+  title: string;
+  description: string;
+  badge?: string;
+};
+---
+
+<a class="article-card" href={href}>
+  {badge && <span class="badge">{badge}</span>}
+  <h3>{title}</h3>
+  <p>{description}</p>
+</a>

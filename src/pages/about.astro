@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import { SITE } from "@/data/site";
+---
+
+<BaseLayout title="運営者情報" description="暮らしの買い回りメモの運営者情報です。">
+  <section class="article-layout">
+    <Breadcrumb items={[{ label: "運営者情報" }]} />
+    <div class="article-body">
+      <h1>運営者情報</h1>
+      <p>{SITE.name}は、楽天市場で生活用品を買う人向けに、商品比較・買い回り・楽天経済圏の情報を整理するサイトです。</p>
+      <h2>運営方針</h2>
+      <p>日用品、食品、キッチン用品など、暮らしの中で継続的に使うものを中心に、買う前に確認したいポイントをまとめます。</p>
+      <h2>広告について</h2>
+      <p>本サイトでは楽天アフィリエイトリンクを利用します。商品価格、在庫、送料、ポイント条件は変わるため、購入前に楽天市場の商品ページで最新情報をご確認ください。</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,37 @@
+---
+const ranking = [
+  {
+    title: "ティッシュペーパーまとめ買いおすすめ比較",
+    href: "/daily-goods/tissue/",
+    image: "/images/articles/daily-goods/tissue.webp",
+  },
+  {
+    title: "炭酸水のおすすめランキング",
+    href: "/food-drink/sparkling-water/",
+    image: "/images/articles/food-drink/sparkling-water.webp",
+  },
+  {
+    title: "レトルト食品のおすすめまとめ",
+    href: "/food-drink/retort-food/",
+    image: "/images/articles/food-drink/retort-food.webp",
+  },
+];
+---
+
+<section class="home-panel">
+  <div class="home-panel__header">
+    <p>Popular</p>
+    <h2>人気のまとめ記事</h2>
+  </div>
+  <ol class="popular-list">
+    {ranking.map((article, index) => (
+      <li>
+        <a href={article.href}>
+          <span class="popular-list__rank">{index + 1}</span>
+          <img src={article.image} alt="" loading="lazy" />
+          <strong>{article.title}</strong>
+        </a>
+      </li>
+    ))}
+  </ol>
+</section>

@@ -1,0 +1,15 @@
+---
+import { SITE } from "@/data/site";
+---
+
+<header class="kkm-header">
+  <div class="kkm-container kkm-header__inner">
+    <a class="kkm-logo" href="/" aria-label={`${SITE.name} トップへ`}>
+      <span class="kkm-logo__mark" aria-hidden="true">買</span>
+      <span class="kkm-logo__text">{SITE.name}</span>
+    </a>
+    <nav class="kkm-nav" aria-label="主要ナビゲーション">
+      {SITE.nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+</header>

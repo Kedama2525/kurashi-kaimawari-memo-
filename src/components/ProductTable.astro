@@ -1,0 +1,39 @@
+---
+type Product = {
+  shortName: string;
+  capacity: string;
+  priceText: string;
+  features: string[];
+  recommendedFor: string;
+  affiliateUrl: string;
+};
+
+const { products } = Astro.props as { products: Product[] };
+---
+
+<div class="product-table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>商品</th>
+        <th>容量</th>
+        <th>価格目安</th>
+        <th>特徴</th>
+        <th>向いている人</th>
+        <th>リンク</th>
+      </tr>
+    </thead>
+    <tbody>
+      {products.map((product) => (
+        <tr>
+          <td>{product.shortName}</td>
+          <td>{product.capacity}</td>
+          <td>{product.priceText}</td>
+          <td>{product.features.join(" / ")}</td>
+          <td>{product.recommendedFor}</td>
+          <td><a href={product.affiliateUrl} rel="nofollow sponsored">楽天で見る</a></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

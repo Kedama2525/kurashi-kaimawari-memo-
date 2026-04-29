@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Hero from "@/components/home/Hero.astro";
+import CategoryGrid from "@/components/home/CategoryGrid.astro";
+import FeaturedArticles from "@/components/home/FeaturedArticles.astro";
+import ShoppingSetSection from "@/components/home/ShoppingSetSection.astro";
+import PopularArticles from "@/components/home/PopularArticles.astro";
+import SaleBanner from "@/components/home/SaleBanner.astro";
+import EconomyGuide from "@/components/home/EconomyGuide.astro";
+import { SITE } from "@/data/site";
+---
+
+<BaseLayout title={SITE.name} description={SITE.description}>
+  <Hero />
+  <CategoryGrid />
+  <SaleBanner />
+  <EconomyGuide />
+
+  <section class="home-main-section" aria-label="おすすめコンテンツ">
+    <div class="home-main-grid">
+      <FeaturedArticles />
+      <ShoppingSetSection />
+      <PopularArticles />
+    </div>
+  </section>
+</BaseLayout>

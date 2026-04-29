@@ -1,0 +1,40 @@
+---
+type Product = {
+  name: string;
+  shortName: string;
+  priceText: string;
+  capacity: string;
+  shipping: string;
+  reviewCount?: number;
+  reviewAverage?: number;
+  imageUrl: string;
+  affiliateUrl: string;
+  features: string[];
+  recommendedFor: string;
+  caution?: string;
+};
+
+const { product } = Astro.props as { product: Product };
+---
+
+<article class="product-card">
+  <div class="product-card__inner">
+    <a href={product.affiliateUrl} rel="nofollow sponsored">
+      <img class="product-card__image" src={product.imageUrl} alt={`${product.shortName}の商品画像`} loading="lazy" />
+    </a>
+    <div>
+      <h3><a href={product.affiliateUrl} rel="nofollow sponsored">{product.name}</a></h3>
+      <p class="product-meta">
+        価格目安: {product.priceText} / 容量: {product.capacity} / 送料: {product.shipping}
+        {product.reviewAverage && ` / 評価: ${product.reviewAverage}`}
+        {product.reviewCount && ` / レビュー: ${product.reviewCount.toLocaleString()}件`}
+      </p>
+      <ul class="tag-list">
+        {product.features.map((feature) => <li>{feature}</li>)}
+      </ul>
+      <p>向いている人: {product.recommendedFor}</p>
+      {product.caution && <p class="muted">注意点: {product.caution}</p>}
+      <p><a class="button button--accent" href={product.affiliateUrl} rel="nofollow sponsored">楽天で見る</a></p>
+    </div>
+  </div>
+</article>

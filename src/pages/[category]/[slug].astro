@@ -1,0 +1,55 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import ArticleLayout from "@/layouts/ArticleLayout.astro";
+import ProductGrid from "@/components/ProductGrid.astro";
+import ProductTable from "@/components/ProductTable.astro";
+import { getCategory } from "@/data/categories";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("articles", ({ data }) => !data.draft);
+  return articles.map((article) => ({
+    params: {
+      category: article.data.category,
+      slug: article.data.slug,
+    },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const category = getCategory(article.data.category);
+
+if (!category) {
+  throw new Error(`Unknown category: ${article.data.category}`);
+}
+
+const { Content, headings } = await render(article);
+const productsEntry = article.data.products ? await getEntry("products", article.data.products) : undefined;
+const relatedArticles = article.data.related.length
+  ? (await getCollection("articles", ({ id, data }) => article.data.related.includes(id) && !data.draft))
+  : [];
+
+const tocItems = [
+  ...headings.filter((heading) => heading.depth === 2),
+  ...(productsEntry
+    ? [
+        { depth: 2, slug: "comparison", text: "比較表" },
+        { depth: 2, slug: "products", text: "おすすめ商品" },
+      ]
+    : []),
+].filter((heading, index, all) => all.findIndex((item) => item.slug === heading.slug) === index);
+---
+
+<ArticleLayout article={article} category={category} relatedArticles={relatedArticles} tocItems={tocItems}>
+  <Content />
+
+  {productsEntry && (
+    <>
+      <h2 id="comparison">比較表</h2>
+      <ProductTable products={productsEntry.data} />
+
+      <h2 id="products">おすすめ商品</h2>
+      <ProductGrid products={productsEntry.data} />
+    </>
+  )}
+</ArticleLayout>

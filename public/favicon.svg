@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="暮らしの買い回りメモ">
+  <rect width="64" height="64" rx="14" fill="#6F9F89"/>
+  <path d="M16 23h32l-3 22H19l-3-22Z" fill="#fff"/>
+  <path d="M22 23a10 10 0 0 1 20 0" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M22 31h20M23 38h18" stroke="#6F9F89" stroke-width="4" stroke-linecap="round"/>
+</svg>
