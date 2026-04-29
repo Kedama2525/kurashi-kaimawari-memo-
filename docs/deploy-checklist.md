@@ -2,12 +2,12 @@
 
 ## GitHub
 
-1. GitHubで `kurashi-kaimawari-memo` リポジトリを作成する
+1. GitHubで `kurashi-kaimawari-memo-` リポジトリを作成する
 2. このローカルリポジトリに `origin` を設定する
 3. `main` ブランチをpushする
 
 ```bash
-git remote add origin git@github.com:<your-name>/kurashi-kaimawari-memo.git
+git remote add origin git@github.com:Kedama2525/kurashi-kaimawari-memo-.git
 git push -u origin main
 ```
 
