@@ -399,6 +399,35 @@ th {
   font-size: 1.12rem;
 }
 
+.rakuten-card-affiliate {
+  margin: 26px 0 8px;
+  text-align: center;
+}
+
+.rakuten-card-affiliate--wide {
+  margin: 30px 0 0;
+}
+
+.rakuten-card-affiliate__banner {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
+  line-height: 0;
+}
+
+.rakuten-card-affiliate__banner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+.rakuten-card-affiliate__text {
+  margin: 10px 0 0;
+  font-weight: 800;
+}
+
 .points {
   margin: 22px 0;
   padding: 18px 20px;
@@ -542,6 +571,10 @@ th {
 @media (max-width: 560px) {
   .article-body {
     padding: 18px;
+  }
+
+  .rakuten-card-affiliate--wide {
+    display: none;
   }
 
   .article-toc--compact ol {

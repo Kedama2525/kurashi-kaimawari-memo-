@@ -23,6 +23,15 @@ related:
 
 ただし、カードを作ること自体が目的ではありません。日用品の購入頻度、月の購入額、他の楽天サービスを使うかで判断します。
 
+<div class="rakuten-card-affiliate">
+  <a class="rakuten-card-affiliate__banner" href="https://hb.afl.rakuten.co.jp/hsc/53516843.51dd3381.535152fb.05b77069/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIxIiwiYmFuIjozNzM0MjcsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener">
+    <img src="https://hbb.afl.rakuten.co.jp/hsb/53516843.51dd3381.535152fb.05b77069/?me_id=2101008&me_adv_id=373427&t=pict" alt="楽天カード" width="300" height="250" loading="lazy">
+  </a>
+  <p class="rakuten-card-affiliate__text">
+    <a href="https://hb.afl.rakuten.co.jp/hsc/535169b5.fd330d87.535152fb.05b77069/?link_type=hybrid_url&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJoeWJyaWRfdXJsIiwiY29sIjoxLCJjYXQiOiIxIiwiYmFuIjozNzM0MzAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener">楽天カードの詳細を確認する</a>
+  </p>
+</div>
+
 ## 5と0のつく日との関係
 
 楽天市場では、日付キャンペーンと支払い方法が関係することがあります。エントリー条件やポイント上限は変わることがあるため、買う前に最新のキャンペーンページを確認します。
@@ -46,6 +55,12 @@ related:
 ## 向いていない人
 
 楽天市場をほとんど使わない人、ポイント条件の確認が面倒な人、クレジットカードを増やしたくない人には優先度が高くありません。
+
+<div class="rakuten-card-affiliate rakuten-card-affiliate--wide">
+  <a class="rakuten-card-affiliate__banner" href="https://hb.afl.rakuten.co.jp/hsc/535169b5.fd330d87.535152fb.05b77069/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIxIiwiYmFuIjozNzM0MzAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener">
+    <img src="https://hbb.afl.rakuten.co.jp/hsb/535169b5.fd330d87.535152fb.05b77069/?me_id=2101008&me_adv_id=373430&t=pict" alt="楽天カード" width="728" height="90" loading="lazy">
+  </a>
+</div>
 
 ## まとめ
 
