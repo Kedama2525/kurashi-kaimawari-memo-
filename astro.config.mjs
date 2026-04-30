@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-const site = process.env.PUBLIC_SITE_URL || "https://kurashi-kaimawari-memo.pages.dev";
+const site = process.env.PUBLIC_SITE_URL || "https://kurashi-kaimawari.com";
 
 export default defineConfig({
   site,

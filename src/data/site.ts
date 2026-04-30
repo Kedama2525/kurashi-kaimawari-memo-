@@ -2,7 +2,7 @@ export const SITE = {
   name: "暮らしの買い回りメモ",
   description:
     "楽天市場で買える日用品、食品、キッチン用品を中心に、買い回りしやすい暮らしの定番品をまとめています。",
-  url: "https://kurashi-kaimawari-memo.pages.dev",
+  url: "https://kurashi-kaimawari.com",
   author: "暮らしの買い回りメモ編集部",
   hatenaUrl: "https://kurashi-kaimawari-memo.hatenablog.com/",
   ogImage: "/images/common/ogp-default.webp",
